@@ -67,3 +67,22 @@ a:hover {
   max-width: 200px;
   height: auto;
 }
+.filters {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.filters button {
+  background-color: #3b4c5a;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  margin: 0 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filters button:hover {
+  background-color: #5a6b7a;
+}
