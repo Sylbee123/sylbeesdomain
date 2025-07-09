@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Upload Novel - SylBee</title>
+</head>
+<body>
+  <h1>Add a New Novel</h1>
+  <form id="novelForm">
+    <label>Title: <input type="text" id="title" required /></label><br/><br/>
+    <label>Description:<br/><textarea id="description" rows="4" cols="50"></textarea></label><br/><br/>
+    <label>Genre:
+      <select id="genre">
+        <option value="fantasy">Fantasy</option>
+        <option value="romance">Romance</option>
+        <option value="adventure">Adventure</option>
+        <option value="drama">Drama</option>
+      </select>
+    </label><br/><br/>
+    <button type="submit">Upload Novel</button>
+  </form>
+
+  <script src="https://www.gstatic.com/firebasejs/10.x.x/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.x.x/firebase-firestore.js"></script>
+  <script>
+    const firebaseConfig = {
+     const firebaseConfig = {
+    apiKey: "AIzaSyD_Ta5YiGbm7IqRxotPidyFlyWMJbu0GHo",
+    authDomain: "sylbeesdomain.firebaseapp.com",
+    projectId: "sylbeesdomain",
+    storageBucket: "sylbeesdomain.firebasestorage.app",
+    messagingSenderId: "716391658052",
+    appId: "1:716391658052:web:b59ba9480ebf3cb62a0211"
+  };
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    document.getElementById('novelForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const title = document.getElementById('title').value.trim();
+      const description = document.getElementById('description').value.trim();
+      const genre = document.getElementById('genre').value;
+
+      try {
+        await db.collection('novels').add({
+          title,
+          description,
+          genre,
+          createdAt: new Date()
+        });
+        alert('Novel uploaded successfully!');
+        document.getElementById('novelForm').reset();
+      } catch (err) {
+        console.error('Error uploading novel:', err);
+        alert('Failed to upload novel.');
+      }
+    });
+  </script>
+</body>
+</html>
