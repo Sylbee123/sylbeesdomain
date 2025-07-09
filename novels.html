@@ -18,28 +18,43 @@
   <main>
   <h1>My Translations</h1>
 
-  <h2>Fantasy</h2>
-  <ul>
-    <li><a href="chapter1.html">✨ Reincarnated into the Demon King's Garden</a> - [Ongoing]</li>
-    <li><a href="#">🦴 The Bone Witch of Westmoor</a> - [Complete]</li>
-    <li><a href="#">🐉 How to Tame a Dragon Emperor</a> - [Ongoing]</li>
-  </ul>
+  <!-- FILTER BUTTONS -->
+  <div class="filters">
+    <button onclick="filterStories('all')">All</button>
+    <button onclick="filterStories('fantasy')">Fantasy</button>
+    <button onclick="filterStories('romance')">Romance</button>
+    <button onclick="filterStories('adventure')">Adventure</button>
+  </div>
 
-  <h2>Romance</h2>
-  <ul>
-    <li><a href="#">🕊️ A Love Letter from the War</a> - [New]</li>
-    <li><a href="#">💍 His Contract Fiancée is a Sorceress</a> - [Hiatus]</li>
-  </ul>
+  <!-- STORY LIST -->
+  <ul id="story-list">
+    <li class="fantasy"><a href="chapter1.html">✨ Reincarnated into the Demon King's Garden</a> - [Ongoing]</li>
+    <li class="fantasy"><a href="#">🦴 The Bone Witch of Westmoor</a> - [Complete]</li>
+    <li class="fantasy"><a href="#">🐉 How to Tame a Dragon Emperor</a> - [Ongoing]</li>
 
-  <h2>Adventure</h2>
-  <ul>
-    <li><a href="#">⚔️ The Cursed Knight and the Fallen Saint</a> - [Ongoing]</li>
-    <li><a href="#">🎭 Masked Hero: Rebirth in the Arena</a> - [Complete]</li>
+    <li class="romance"><a href="#">🕊️ A Love Letter from the War</a> - [New]</li>
+    <li class="romance"><a href="#">💍 His Contract Fiancée is a Sorceress</a> - [Hiatus]</li>
+
+    <li class="adventure"><a href="#">⚔️ The Cursed Knight and the Fallen Saint</a> - [Ongoing]</li>
+    <li class="adventure"><a href="#">🎭 Masked Hero: Rebirth in the Arena</a> - [Complete]</li>
   </ul>
 
   <p style="text-align: center; margin-top: 2rem;">
     <a href="index.html">← Back to Home</a>
   </p>
 </main>
+
+<script>
+  function filterStories(genre) {
+    const stories = document.querySelectorAll('#story-list li');
+    stories.forEach(story => {
+      if (genre === 'all' || story.classList.contains(genre)) {
+        story.style.display = 'list-item';
+      } else {
+        story.style.display = 'none';
+      }
+    });
+  }
+</script>
 </body>
 </html>
