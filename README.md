@@ -1,21 +1,2 @@
 # sylbeesdomain
 novel reading website
-index.html 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Fan Translation Site</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <h1>Welcome to My Fan Translation Site</h1>
-  <nav>
-    <ul>
-      <li><a href="chapter1.html">Chapter 1</a></li>
-      <li><a href="chapter2.html">Chapter 2</a></li>
-    </ul>
-  </nav>
-</body>
-</html>
